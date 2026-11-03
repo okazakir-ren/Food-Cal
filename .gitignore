@@ -5,3 +5,20 @@ xcuserdata/
 .DS_Store
 .env
 okazaki/
+
+
+# 配布物
+*.ipa
+*.xcarchive
+*.dSYM/
+*.dSYM.zip
+
+# 署名と秘密情報
+*.p8
+*.p12
+*.mobileprovision
+.env.*
+
+# Swift Package Manager
+.build/
+.swiftpm/
