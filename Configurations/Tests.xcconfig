@@ -1,0 +1,6 @@
+#include "Shared.xcconfig"
+PRODUCT_NAME = AruiteGohanTests
+PRODUCT_BUNDLE_IDENTIFIER = jp.renokazaki.aruitegohan.tests
+TEST_HOST = $(BUILT_PRODUCTS_DIR)/AruiteGohan.app/AruiteGohan
+BUNDLE_LOADER = $(TEST_HOST)
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks @loader_path/Frameworks
