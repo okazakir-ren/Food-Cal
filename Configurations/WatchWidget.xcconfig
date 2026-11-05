@@ -1,0 +1,13 @@
+#include "Shared.xcconfig"
+PRODUCT_NAME = AruiteGohanWatchWidget
+PRODUCT_BUNDLE_IDENTIFIER = jp.renokazaki.aruitegohan.watchkitapp.widget
+SDKROOT = watchos
+SUPPORTED_PLATFORMS = watchos watchsimulator
+TARGETED_DEVICE_FAMILY = 4
+WATCHOS_DEPLOYMENT_TARGET = 26.0
+CODE_SIGN_ENTITLEMENTS = Configurations/Widget.entitlements
+INFOPLIST_FILE = Configurations/Widget-Info.plist
+INFOPLIST_KEY_CFBundleDisplayName = あるいてごはん
+APPLICATION_EXTENSION_API_ONLY = YES
+SKIP_INSTALL = YES
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks @executable_path/../../Frameworks

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B00000000000000000000001 /* AruiteGohanWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A10000000000000000000002 /* AruiteGohanWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B00000000000000000000002 /* AruiteGohanWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A10000000000000000000008 /* AruiteGohanWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B00000000000000000000003 /* AruiteGohanWatchWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A10000000000000000000009 /* AruiteGohanWatchWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +27,20 @@
 			remoteGlobalIDString = A50000000000000000000001;
 			remoteInfo = AruiteGohan;
 		};
+		B10000000000000000000003 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A60000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A50000000000000000000004;
+			remoteInfo = AruiteGohanWatch;
+		};
+		B10000000000000000000004 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A60000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A50000000000000000000005;
+			remoteInfo = AruiteGohanWatchWidget;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +55,28 @@
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B20000000000000000000002 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				B00000000000000000000002 /* AruiteGohanWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B20000000000000000000003 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B00000000000000000000003 /* AruiteGohanWatchWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +87,10 @@
 		A10000000000000000000005 /* App.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = App.xcconfig; sourceTree = "<group>"; };
 		A10000000000000000000006 /* Widget.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Widget.xcconfig; sourceTree = "<group>"; };
 		A10000000000000000000007 /* Tests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Tests.xcconfig; sourceTree = "<group>"; };
+		A10000000000000000000008 /* AruiteGohanWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AruiteGohanWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000000000000000000009 /* AruiteGohanWatchWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AruiteGohanWatchWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1000000000000000000000A /* Watch.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Watch.xcconfig; sourceTree = "<group>"; };
+		A1000000000000000000000B /* WatchWidget.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = WatchWidget.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -56,6 +98,8 @@
 		A20000000000000000000002 /* Widget */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Widget; sourceTree = "<group>"; };
 		A20000000000000000000003 /* Shared */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Shared; sourceTree = "<group>"; };
 		A20000000000000000000004 /* Tests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Tests; sourceTree = "<group>"; };
+		A20000000000000000000005 /* Watch */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Watch; sourceTree = "<group>"; };
+		A20000000000000000000006 /* WatchWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = WatchWidget; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +124,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A40000000000000000000032 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A40000000000000000000042 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -90,6 +148,8 @@
 				A20000000000000000000002 /* Widget */,
 				A20000000000000000000003 /* Shared */,
 				A20000000000000000000004 /* Tests */,
+				A20000000000000000000005 /* Watch */,
+				A20000000000000000000006 /* WatchWidget */,
 				A30000000000000000000003 /* Configurations */,
 				A30000000000000000000002 /* Products */,
 			);
@@ -101,6 +161,8 @@
 				A10000000000000000000001 /* AruiteGohan.app */,
 				A10000000000000000000002 /* AruiteGohanWidget.appex */,
 				A10000000000000000000003 /* AruiteGohanTests.xctest */,
+				A10000000000000000000008 /* AruiteGohanWatch.app */,
+				A10000000000000000000009 /* AruiteGohanWatchWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,6 +174,8 @@
 				A10000000000000000000005 /* App.xcconfig */,
 				A10000000000000000000006 /* Widget.xcconfig */,
 				A10000000000000000000007 /* Tests.xcconfig */,
+				A1000000000000000000000A /* Watch.xcconfig */,
+				A1000000000000000000000B /* WatchWidget.xcconfig */,
 			);
 			path = Configurations;
 			sourceTree = "<group>";
@@ -127,11 +191,13 @@
 				A40000000000000000000002 /* Frameworks */,
 				A40000000000000000000003 /* Resources */,
 				B20000000000000000000001 /* Embed Foundation Extensions */,
+				B20000000000000000000002 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				B30000000000000000000001 /* PBXTargetDependency */,
+				B30000000000000000000003 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				A20000000000000000000001 /* App */,
@@ -184,6 +250,50 @@
 			productReference = A10000000000000000000003 /* AruiteGohanTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		A50000000000000000000004 /* AruiteGohanWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A80000000000000000000005 /* Build configuration list for PBXNativeTarget "AruiteGohanWatch" */;
+			buildPhases = (
+				A40000000000000000000031 /* Sources */,
+				A40000000000000000000032 /* Frameworks */,
+				A40000000000000000000033 /* Resources */,
+				B20000000000000000000003 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B30000000000000000000004 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A20000000000000000000005 /* Watch */,
+				A20000000000000000000003 /* Shared */,
+			);
+			name = AruiteGohanWatch;
+			productName = AruiteGohanWatch;
+			productReference = A10000000000000000000008 /* AruiteGohanWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A50000000000000000000005 /* AruiteGohanWatchWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A80000000000000000000006 /* Build configuration list for PBXNativeTarget "AruiteGohanWatchWidget" */;
+			buildPhases = (
+				A40000000000000000000041 /* Sources */,
+				A40000000000000000000042 /* Frameworks */,
+				A40000000000000000000043 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A20000000000000000000006 /* WatchWidget */,
+				A20000000000000000000003 /* Shared */,
+			);
+			name = AruiteGohanWatchWidget;
+			productName = AruiteGohanWatchWidget;
+			productReference = A10000000000000000000009 /* AruiteGohanWatchWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -202,6 +312,12 @@
 					A50000000000000000000003 = {
 						CreatedOnToolsVersion = 27.0;
 						TestTargetID = A50000000000000000000001;
+					};
+					A50000000000000000000004 = {
+						CreatedOnToolsVersion = 27.0;
+					};
+					A50000000000000000000005 = {
+						CreatedOnToolsVersion = 27.0;
 					};
 				};
 			};
@@ -222,6 +338,8 @@
 				A50000000000000000000001 /* AruiteGohan */,
 				A50000000000000000000002 /* AruiteGohanWidget */,
 				A50000000000000000000003 /* AruiteGohanTests */,
+				A50000000000000000000004 /* AruiteGohanWatch */,
+				A50000000000000000000005 /* AruiteGohanWatchWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -242,6 +360,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A40000000000000000000023 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A40000000000000000000033 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A40000000000000000000043 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -272,6 +404,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A40000000000000000000031 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A40000000000000000000041 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -284,6 +430,16 @@
 			isa = PBXTargetDependency;
 			target = A50000000000000000000001 /* AruiteGohan */;
 			targetProxy = B10000000000000000000002 /* PBXContainerItemProxy */;
+		};
+		B30000000000000000000003 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A50000000000000000000004 /* AruiteGohanWatch */;
+			targetProxy = B10000000000000000000003 /* PBXContainerItemProxy */;
+		};
+		B30000000000000000000004 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A50000000000000000000005 /* AruiteGohanWatchWidget */;
+			targetProxy = B10000000000000000000004 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -357,6 +513,34 @@
 			};
 			name = Release;
 		};
+		A70000000000000000000009 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1000000000000000000000A /* Watch.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		A7000000000000000000000A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1000000000000000000000A /* Watch.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		A7000000000000000000000B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1000000000000000000000B /* WatchWidget.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		A7000000000000000000000C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1000000000000000000000B /* WatchWidget.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -392,6 +576,24 @@
 			buildConfigurations = (
 				A70000000000000000000007 /* Debug */,
 				A70000000000000000000008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A80000000000000000000005 /* Build configuration list for PBXNativeTarget "AruiteGohanWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70000000000000000000009 /* Debug */,
+				A7000000000000000000000A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A80000000000000000000006 /* Build configuration list for PBXNativeTarget "AruiteGohanWatchWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7000000000000000000000B /* Debug */,
+				A7000000000000000000000C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

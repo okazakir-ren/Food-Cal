@@ -166,3 +166,53 @@ final class DiagnosticSummaryTests: XCTestCase {
         XCTAssertEqual(rows.first { $0.source == .app }?.total, 0)
     }
 }
+
+final class WatchSyncTests: XCTestCase {
+    private let day = Date(timeIntervalSince1970: 1_800_000_000)
+    private var nextDay: Date { day.addingTimeInterval(86_400) }
+
+    private func snapshot(_ dayStart: Date, steps: Int, weight: Double = 60, read: Date? = nil) -> DaySnapshot {
+        DaySnapshot(dayStart: dayStart, steps: steps, weightKg: weight, lastReadAt: read)
+    }
+
+    func testPayloadRoundTrip() {
+        let original = snapshot(day, steps: 7150, read: day)
+        XCTAssertEqual(WatchSyncPayload.decode(WatchSyncPayload.encode(original)), original)
+    }
+
+    func testPayloadIgnoresOtherMessages() {
+        XCTAssertNil(WatchSyncPayload.decode([:]))
+        XCTAssertNil(WatchSyncPayload.decode([WatchSyncPayload.requestKey: true]))
+        XCTAssertNil(WatchSyncPayload.decode(["snapshot": Data("壊れた値".utf8)]))
+    }
+
+    func testMergeUsesRemoteWhenNothingLocal() {
+        let remote = snapshot(day, steps: 100)
+        XCTAssertEqual(SnapshotPolicy.merge(local: nil, remote: remote), remote)
+    }
+
+    func testMergeKeepsHigherStepsOnSameDayAndUsesRemoteWeight() {
+        let more = SnapshotPolicy.merge(local: snapshot(day, steps: 300), remote: snapshot(day, steps: 5000, weight: 75))
+        XCTAssertEqual(more.steps, 5000)
+        XCTAssertEqual(more.weightKg, 75)
+
+        let fewer = SnapshotPolicy.merge(local: snapshot(day, steps: 6000), remote: snapshot(day, steps: 5000, weight: 75))
+        XCTAssertEqual(fewer.steps, 6000)
+        XCTAssertEqual(fewer.kcal, 300)
+    }
+
+    func testMergeKeepsNewestReadTime() {
+        let earlier = day.addingTimeInterval(60)
+        let later = day.addingTimeInterval(120)
+        let merged = SnapshotPolicy.merge(local: snapshot(day, steps: 1, read: later), remote: snapshot(day, steps: 2, read: earlier))
+        XCTAssertEqual(merged.lastReadAt, later)
+    }
+
+    func testMergeIgnoresOlderDayAndAcceptsNewerDay() {
+        let local = snapshot(nextDay, steps: 10)
+        XCTAssertEqual(SnapshotPolicy.merge(local: local, remote: snapshot(day, steps: 9000)), local)
+
+        let remote = snapshot(nextDay, steps: 20)
+        XCTAssertEqual(SnapshotPolicy.merge(local: snapshot(day, steps: 9000), remote: remote), remote)
+    }
+}

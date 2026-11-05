@@ -1,3 +1,4 @@
+#if os(iOS)
 import SwiftUI
 import UIKit
 
@@ -161,3 +162,4 @@ struct SetupNeededView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
+#endif

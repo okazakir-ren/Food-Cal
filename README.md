@@ -10,6 +10,14 @@
 
 
 
+## Apple Watch
+
+| アプリ | コンプリケーションの部品 |
+|---|---|
+| ![Watchアプリ](docs/images/watch.png) | ![コンプリケーション](docs/images/watch-complications.png) |
+
+iPhoneが計算した値をWatchConnectivityで受け取ります。Watch自身のHealthKitで読めた歩数のほうが多ければ、そちらを使います。画像はシミュレータのもので、コンプリケーションは文字盤に置く前の表示部品です。watchOS 26以上です。
+
 ## 計算
 
 ```text

@@ -22,6 +22,7 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
         DebugBootstrap.apply()
         #endif
         DiagnosticLog.trim()
+        WatchSnapshotSender.shared.activate()
         // バックグラウンドで起こされたときも受け取れるよう、起動の最初に登録する。
         BackgroundDelivery.shared.startIfAuthorized()
         return true
@@ -58,7 +59,9 @@ final class BackgroundDelivery {
                 return
             }
             Task {
-                await TodayRefresher.refresh(source: .background, action: "observer")
+                if let snapshot = await TodayRefresher.refresh(source: .background, action: "observer") {
+                    WatchSnapshotSender.shared.send(snapshot)
+                }
                 WidgetCenter.shared.reloadAllTimelines()
                 completion()
             }

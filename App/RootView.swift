@@ -114,6 +114,7 @@ struct RootView: View {
         BackgroundDelivery.shared.startIfAuthorized()
         await syncWeightFromHealth()
         snapshot = await TodayRefresher.refresh(source: .app, action: "foreground")
+        if let snapshot { WatchSnapshotSender.shared.send(snapshot) }
         WidgetCenter.shared.reloadAllTimelines()
         if let weight = store.weightKg, weightText.isEmpty { weightText = String(format: "%.1f", weight) }
         events = DiagnosticLog.readAll()

@@ -36,6 +36,9 @@ xcodebuild archive \
 
 app="$archive/Products/Applications/AruiteGohan.app"
 codesign -f -s - --entitlements "$root/Configurations/Widget.entitlements" "$app/PlugIns/AruiteGohanWidget.appex"
+watch="$app/Watch/AruiteGohanWatch.app"
+codesign -f -s - --entitlements "$root/Configurations/Widget.entitlements" "$watch/PlugIns/AruiteGohanWatchWidget.appex"
+codesign -f -s - --entitlements "$root/Configurations/Watch.entitlements" "$watch"
 codesign -f -s - --entitlements "$root/Configurations/App.entitlements" "$app"
 
 cat > "$out/ExportOptions.plist" <<EOF
